@@ -1,0 +1,624 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9B1AAD9-5F3F-4945-A17C-38CA59FEB09B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Naive2</RootNamespace>
+    <AssemblyName>Naive2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin.Master" />
+    <Content Include="adminHODDetails.aspx" />
+    <Content Include="Coordinator.Master" />
+    <Content Include="CSS\studentStyle.css" />
+    <Content Include="HOD.Master" />
+    <None Include="packages.config" />
+    <Content Include="CSS\registerFYPStyle.css" />
+    <Content Include="CSS\supervisorStyle.css" />
+    <Content Include="hodDetailRequest.aspx" />
+    <Content Include="hodEditUploadedIdea.aspx" />
+    <Content Include="hodIdeaDetails.aspx" />
+    <Content Include="hodOtherSupervisorIdeas.aspx" />
+    <Content Include="hodRegistrationRequestDetails.aspx" />
+    <Content Include="hodUploadIdea.aspx" />
+    <Content Include="hodViewProfile.aspx" />
+    <Content Include="hodViewRegistrationRequest.aspx" />
+    <Content Include="hodViewSupervisionRequest.aspx" />
+    <Content Include="hodViewUploadIdeas.aspx" />
+    <Content Include="RegisterFYP.aspx" />
+    <Content Include="studentIdeaRegistration.aspx" />
+    <Content Include="studentSupervisorIdeas.aspx" />
+    <Content Include="studentSupervisorIdeasDetail.aspx" />
+    <Content Include="studentViewProfile.aspx" />
+    <Content Include="Supervisor.Master" />
+    <Content Include="Student.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adminAddAdmin.aspx" />
+    <Content Include="adminAddCoordinator.aspx" />
+    <Content Include="adminAddField.aspx" />
+    <Content Include="adminAddHOD.aspx" />
+    <Content Include="adminAddInstructor.aspx" />
+    <Content Include="adminAddStudent.aspx" />
+    <Content Include="adminAddSupervisor.aspx" />
+    <Content Include="adminAllFields.aspx" />
+    <Content Include="adminDetailAdmin.aspx" />
+    <Content Include="adminDetailCoordinator.aspx" />
+    <Content Include="adminDetailInstructor.aspx" />
+    <Content Include="adminDetailStudent.aspx" />
+    <Content Include="adminDetailSupervisor.aspx" />
+    <Content Include="adminEditAdmin.aspx" />
+    <Content Include="adminEditCoordinator.aspx" />
+    <Content Include="adminEditField.aspx" />
+    <Content Include="adminEditInstructor.aspx" />
+    <Content Include="adminEditStudent.aspx" />
+    <Content Include="adminEditSupervisor.aspx" />
+    <Content Include="adminSearchInstructor.aspx" />
+    <Content Include="adminSearchStudent.aspx" />
+    <Content Include="adminSearchSupervisor.aspx" />
+    <Content Include="adminViewAllAdmins.aspx" />
+    <Content Include="adminViewAllCoordinators.aspx" />
+    <Content Include="adminViewProfile.aspx" />
+    <Content Include="Assets\person.jpg" />
+    <Content Include="coordinatorDetailRequest.aspx" />
+    <Content Include="coordinatorEditUploadedIdea.aspx" />
+    <Content Include="coordinatorIdeadetails.aspx" />
+    <Content Include="coordinatorOtherSupervisorIdeas.aspx" />
+    <Content Include="coordinatorUploadIdea.aspx" />
+    <Content Include="coordinatorViewProfile.aspx" />
+    <Content Include="coordinatorViewSupervisionRequest.aspx" />
+    <Content Include="coordinatorViewUploadIdeas.aspx" />
+    <Content Include="CSS\adminStyle.css" />
+    <Content Include="CSS\coordinatorStyle.css" />
+    <Content Include="supervisorDetailRequest.aspx" />
+    <Content Include="supervisorEditUploadedIdea.aspx" />
+    <Content Include="supervisorIdeaDetails.aspx" />
+    <Content Include="supervisorOtherSupervisorIdeas.aspx" />
+    <Content Include="supervisorUploadIdea.aspx" />
+    <Content Include="supervisorViewProfile.aspx" />
+    <Content Include="supervisorViewSupervisionRequest.aspx" />
+    <Content Include="supervisorViewUploadIdeas.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="adminAddAdmin.aspx.cs">
+      <DependentUpon>adminAddAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAddAdmin.aspx.designer.cs">
+      <DependentUpon>adminAddAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAddCoordinator.aspx.cs">
+      <DependentUpon>adminAddCoordinator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAddCoordinator.aspx.designer.cs">
+      <DependentUpon>adminAddCoordinator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAddField.aspx.cs">
+      <DependentUpon>adminAddField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAddField.aspx.designer.cs">
+      <DependentUpon>adminAddField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAddHOD.aspx.cs">
+      <DependentUpon>adminAddHOD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAddHOD.aspx.designer.cs">
+      <DependentUpon>adminAddHOD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAddInstructor.aspx.cs">
+      <DependentUpon>adminAddInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAddInstructor.aspx.designer.cs">
+      <DependentUpon>adminAddInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAddStudent.aspx.cs">
+      <DependentUpon>adminAddStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAddStudent.aspx.designer.cs">
+      <DependentUpon>adminAddStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAddSupervisor.aspx.cs">
+      <DependentUpon>adminAddSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAddSupervisor.aspx.designer.cs">
+      <DependentUpon>adminAddSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAllFields.aspx.cs">
+      <DependentUpon>adminAllFields.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAllFields.aspx.designer.cs">
+      <DependentUpon>adminAllFields.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminDetailAdmin.aspx.cs">
+      <DependentUpon>adminDetailAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDetailAdmin.aspx.designer.cs">
+      <DependentUpon>adminDetailAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminDetailCoordinator.aspx.cs">
+      <DependentUpon>adminDetailCoordinator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDetailCoordinator.aspx.designer.cs">
+      <DependentUpon>adminDetailCoordinator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminDetailInstructor.aspx.cs">
+      <DependentUpon>adminDetailInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDetailInstructor.aspx.designer.cs">
+      <DependentUpon>adminDetailInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminDetailStudent.aspx.cs">
+      <DependentUpon>adminDetailStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDetailStudent.aspx.designer.cs">
+      <DependentUpon>adminDetailStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminDetailSupervisor.aspx.cs">
+      <DependentUpon>adminDetailSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDetailSupervisor.aspx.designer.cs">
+      <DependentUpon>adminDetailSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminEditAdmin.aspx.cs">
+      <DependentUpon>adminEditAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminEditAdmin.aspx.designer.cs">
+      <DependentUpon>adminEditAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminEditCoordinator.aspx.cs">
+      <DependentUpon>adminEditCoordinator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminEditCoordinator.aspx.designer.cs">
+      <DependentUpon>adminEditCoordinator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminEditField.aspx.cs">
+      <DependentUpon>adminEditField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminEditField.aspx.designer.cs">
+      <DependentUpon>adminEditField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminEditInstructor.aspx.cs">
+      <DependentUpon>adminEditInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminEditInstructor.aspx.designer.cs">
+      <DependentUpon>adminEditInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminEditStudent.aspx.cs">
+      <DependentUpon>adminEditStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminEditStudent.aspx.designer.cs">
+      <DependentUpon>adminEditStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminEditSupervisor.aspx.cs">
+      <DependentUpon>adminEditSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminEditSupervisor.aspx.designer.cs">
+      <DependentUpon>adminEditSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminHODDetails.aspx.cs">
+      <DependentUpon>adminHODDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminHODDetails.aspx.designer.cs">
+      <DependentUpon>adminHODDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminSearchInstructor.aspx.cs">
+      <DependentUpon>adminSearchInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminSearchInstructor.aspx.designer.cs">
+      <DependentUpon>adminSearchInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminSearchStudent.aspx.cs">
+      <DependentUpon>adminSearchStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminSearchStudent.aspx.designer.cs">
+      <DependentUpon>adminSearchStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminSearchSupervisor.aspx.cs">
+      <DependentUpon>adminSearchSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminSearchSupervisor.aspx.designer.cs">
+      <DependentUpon>adminSearchSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminViewAllAdmins.aspx.cs">
+      <DependentUpon>adminViewAllAdmins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminViewAllAdmins.aspx.designer.cs">
+      <DependentUpon>adminViewAllAdmins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminViewAllCoordinators.aspx.cs">
+      <DependentUpon>adminViewAllCoordinators.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminViewAllCoordinators.aspx.designer.cs">
+      <DependentUpon>adminViewAllCoordinators.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminViewProfile.aspx.cs">
+      <DependentUpon>adminViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminViewProfile.aspx.designer.cs">
+      <DependentUpon>adminViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinator.Master.cs">
+      <DependentUpon>Coordinator.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Coordinator.Master.designer.cs">
+      <DependentUpon>Coordinator.Master</DependentUpon>
+    </Compile>
+    <Compile Include="coordinatorDetailRequest.aspx.cs">
+      <DependentUpon>coordinatorDetailRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinatorDetailRequest.aspx.designer.cs">
+      <DependentUpon>coordinatorDetailRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinatorEditUploadedIdea.aspx.cs">
+      <DependentUpon>coordinatorEditUploadedIdea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinatorEditUploadedIdea.aspx.designer.cs">
+      <DependentUpon>coordinatorEditUploadedIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinatorIdeadetails.aspx.cs">
+      <DependentUpon>coordinatorIdeadetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinatorIdeadetails.aspx.designer.cs">
+      <DependentUpon>coordinatorIdeadetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinatorOtherSupervisorIdeas.aspx.cs">
+      <DependentUpon>coordinatorOtherSupervisorIdeas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinatorOtherSupervisorIdeas.aspx.designer.cs">
+      <DependentUpon>coordinatorOtherSupervisorIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinatorUploadIdea.aspx.cs">
+      <DependentUpon>coordinatorUploadIdea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinatorUploadIdea.aspx.designer.cs">
+      <DependentUpon>coordinatorUploadIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinatorViewProfile.aspx.cs">
+      <DependentUpon>coordinatorViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinatorViewProfile.aspx.designer.cs">
+      <DependentUpon>coordinatorViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinatorViewSupervisionRequest.aspx.cs">
+      <DependentUpon>coordinatorViewSupervisionRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinatorViewSupervisionRequest.aspx.designer.cs">
+      <DependentUpon>coordinatorViewSupervisionRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coordinatorViewUploadIdeas.aspx.cs">
+      <DependentUpon>coordinatorViewUploadIdeas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coordinatorViewUploadIdeas.aspx.designer.cs">
+      <DependentUpon>coordinatorViewUploadIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HOD.Master.cs">
+      <DependentUpon>HOD.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HOD.Master.designer.cs">
+      <DependentUpon>HOD.Master</DependentUpon>
+    </Compile>
+    <Compile Include="hodDetailRequest.aspx.cs">
+      <DependentUpon>hodDetailRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodDetailRequest.aspx.designer.cs">
+      <DependentUpon>hodDetailRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodEditUploadedIdea.aspx.cs">
+      <DependentUpon>hodEditUploadedIdea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodEditUploadedIdea.aspx.designer.cs">
+      <DependentUpon>hodEditUploadedIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodIdeaDetails.aspx.cs">
+      <DependentUpon>hodIdeaDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodIdeaDetails.aspx.designer.cs">
+      <DependentUpon>hodIdeaDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodOtherSupervisorIdeas.aspx.cs">
+      <DependentUpon>hodOtherSupervisorIdeas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodOtherSupervisorIdeas.aspx.designer.cs">
+      <DependentUpon>hodOtherSupervisorIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodRegistrationRequestDetails.aspx.cs">
+      <DependentUpon>hodRegistrationRequestDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodRegistrationRequestDetails.aspx.designer.cs">
+      <DependentUpon>hodRegistrationRequestDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodUploadIdea.aspx.cs">
+      <DependentUpon>hodUploadIdea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodUploadIdea.aspx.designer.cs">
+      <DependentUpon>hodUploadIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodViewProfile.aspx.cs">
+      <DependentUpon>hodViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodViewProfile.aspx.designer.cs">
+      <DependentUpon>hodViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodViewRegistrationRequest.aspx.cs">
+      <DependentUpon>hodViewRegistrationRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodViewRegistrationRequest.aspx.designer.cs">
+      <DependentUpon>hodViewRegistrationRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodViewSupervisionRequest.aspx.cs">
+      <DependentUpon>hodViewSupervisionRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodViewSupervisionRequest.aspx.designer.cs">
+      <DependentUpon>hodViewSupervisionRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hodViewUploadIdeas.aspx.cs">
+      <DependentUpon>hodViewUploadIdeas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hodViewUploadIdeas.aspx.designer.cs">
+      <DependentUpon>hodViewUploadIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterFYP.aspx.cs">
+      <DependentUpon>RegisterFYP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterFYP.aspx.designer.cs">
+      <DependentUpon>RegisterFYP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student.Master.cs">
+      <DependentUpon>Student.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student.Master.designer.cs">
+      <DependentUpon>Student.Master</DependentUpon>
+    </Compile>
+    <Compile Include="studentIdeaRegistration.aspx.cs">
+      <DependentUpon>studentIdeaRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentIdeaRegistration.aspx.designer.cs">
+      <DependentUpon>studentIdeaRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentSupervisorIdeas.aspx.cs">
+      <DependentUpon>studentSupervisorIdeas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentSupervisorIdeas.aspx.designer.cs">
+      <DependentUpon>studentSupervisorIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentSupervisorIdeasDetail.aspx.cs">
+      <DependentUpon>studentSupervisorIdeasDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentSupervisorIdeasDetail.aspx.designer.cs">
+      <DependentUpon>studentSupervisorIdeasDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentViewProfile.aspx.cs">
+      <DependentUpon>studentViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentViewProfile.aspx.designer.cs">
+      <DependentUpon>studentViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor.Master.cs">
+      <DependentUpon>Supervisor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor.Master.designer.cs">
+      <DependentUpon>Supervisor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="supervisorDetailRequest.aspx.cs">
+      <DependentUpon>supervisorDetailRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisorDetailRequest.aspx.designer.cs">
+      <DependentUpon>supervisorDetailRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="supervisorEditUploadedIdea.aspx.cs">
+      <DependentUpon>supervisorEditUploadedIdea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisorEditUploadedIdea.aspx.designer.cs">
+      <DependentUpon>supervisorEditUploadedIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="supervisorIdeaDetails.aspx.cs">
+      <DependentUpon>supervisorIdeaDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisorIdeaDetails.aspx.designer.cs">
+      <DependentUpon>supervisorIdeaDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="supervisorOtherSupervisorIdeas.aspx.cs">
+      <DependentUpon>supervisorOtherSupervisorIdeas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisorOtherSupervisorIdeas.aspx.designer.cs">
+      <DependentUpon>supervisorOtherSupervisorIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="supervisorUploadIdea.aspx.cs">
+      <DependentUpon>supervisorUploadIdea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisorUploadIdea.aspx.designer.cs">
+      <DependentUpon>supervisorUploadIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="supervisorViewProfile.aspx.cs">
+      <DependentUpon>supervisorViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisorViewProfile.aspx.designer.cs">
+      <DependentUpon>supervisorViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="supervisorViewSupervisionRequest.aspx.cs">
+      <DependentUpon>supervisorViewSupervisionRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisorViewSupervisionRequest.aspx.designer.cs">
+      <DependentUpon>supervisorViewSupervisionRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="supervisorViewUploadIdeas.aspx.cs">
+      <DependentUpon>supervisorViewUploadIdeas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisorViewUploadIdeas.aspx.designer.cs">
+      <DependentUpon>supervisorViewUploadIdeas.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53505</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53505/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
